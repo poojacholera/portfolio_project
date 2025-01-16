@@ -1,0 +1,90 @@
+#root {
+  margin: 0 ;
+  padding: 0;
+  background-color: #242425; 
+}
+
+.logo {
+  will-change: filter;
+  transition: filter 300ms;
+  
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #ff64acd2);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #fb61eede);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.footer {
+  padding:1.5em;
+  color: #dddddd;
+  background-color: rgb(0, 0, 0);
+}
+.list{
+  text-align: justify;
+}
+.year{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style:italic;
+  font-size: x-small;
+}
+.header{
+  display:flex;
+  align-items: center;
+  padding:0  1.5em;
+ height: auto; 
+ background-color: #21222A;
+ width: 100%;
+}
+span.nav-logo{
+width:340px;
+font-size: 2.4rem;
+font-weight: 700;
+padding: 0 1.5em;
+
+}
+.nav-list{
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 8;
+}
+.nav-list-item{
+  margin-left: 10px;
+  font-size:  1.1rem;
+  margin-block: 10px;
+  margin-top:40px;
+  max-width: 400px;
+}
+.list > li::marker{
+  color: #61DAFB;
+  font-size: 1.1rem;
+}
+.layered {
+  box-shadow:
+  0 6px 5px hsl(0deg 0% 0% / 0.3);
+}
+.main-wrapper {
+  display: flex;
+ flex-direction: column;
+}
