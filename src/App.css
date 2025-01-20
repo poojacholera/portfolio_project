@@ -3,6 +3,20 @@
   padding: 0;
   background-color: #242425; 
 }
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #ffffff;
+    background-color: #1f1f1f;
+    margin: 0;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
 
 .logo {
   will-change: filter;
