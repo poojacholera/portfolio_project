@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./ChefDevi.css"
 import { ErrorBoundary } from "react-error-boundary";
+import SampleRecipe from "./SampleRecipe";
+import IngredientsList from "./IngredientsList";
 
 function Main(){
-    const [ingredients, setIngredients] = useState([]);
-    //let ingredients=['tomatoes', 'cucumber', 'basil', 'olive oil', 'chickpeas']
+    const [ingredients, setIngredients] = useState(['all the main spices','tomatoes', 'cucumber', 'basil', 'olive oil', 'chickpeas']);
+    // ingredients=['all the main spices','tomatoes', 'cucumber', 'basil', 'olive oil', 'chickpeas']
    
     function addIngredient(formData){
        //event.preventDefault();
@@ -13,19 +15,13 @@ function Main(){
        setIngredients(prevIngredients=> 
             [...prevIngredients,newIngredient]
         );
-      
-      
     }
-    
-    const listIngredients = ingredients.map(i =>(
-        <li key={i}>{i}</li>
-    ));
+
+    const [recipeShown, setRecipeShown] = useState(false);
+    const toggleRecipeShown = () => {setRecipeShown(prevRecipeShown=>!prevRecipeShown)}
     return(
         <>
-        <main >
-        <ErrorBoundary
-      fallback={<p>There was an error while submitting the form</p>}
-    >
+        <main>
             <form name="addIngredientForm" className="add-ingredient-form" action={addIngredient} >
                 <input 
                     type="text"
@@ -35,13 +31,8 @@ function Main(){
                 />
                 <button className="add-ingredient" >Add Ingredient</button>
             </form>
-            </ErrorBoundary>
-            <div className="container">
-                <span className="list-ingredients">Ingredients</span>
-                <ul>
-                    {listIngredients}
-                </ul>
-            </div>
+            <IngredientsList ingredients = {ingredients} toggleRecipeShown={toggleRecipeShown} />
+            {recipeShown && <SampleRecipe /> }
         </main>
         </>
     )
