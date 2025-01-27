@@ -1,24 +1,31 @@
 import { useState } from "react";
 import "./ChefDevi.css"
-import { ErrorBoundary } from "react-error-boundary";
 import SampleRecipe from "./SampleRecipe";
 import IngredientsList from "./IngredientsList";
+import { getRecipeFromHF,getRecipeFromMistral } from "./ai";
 
 function Main(){
-    const [ingredients, setIngredients] = useState(['all the main spices','tomatoes', 'cucumber', 'basil', 'olive oil', 'chickpeas']);
-    // ingredients=['all the main spices','tomatoes', 'cucumber', 'basil', 'olive oil', 'chickpeas']
+    const [ingredients, setIngredients] = useState(['all the main spices','tomatoes', 'pasta', 'basil', 'olive oil', ]);
+    // ingredients=['all the main spices','tomatoes', 'pasta', 'basil', 'olive oil', 'chickpeas']
    
     function addIngredient(formData){
        //event.preventDefault();
        const newIngredient = formData.get("ingredient");
-      
        setIngredients(prevIngredients=> 
             [...prevIngredients,newIngredient]
         );
     }
-
-    const [recipeShown, setRecipeShown] = useState(false);
-    const toggleRecipeShown = () => {setRecipeShown(prevRecipeShown=>!prevRecipeShown)}
+    const [recipe, setRecipe] = useState("");
+   // const [recipeShown, setRecipeShown] = useState();
+    const getRecipe =async () => {
+   // setRecipeShown(prevRecipeShown =>
+        //     !prevRecipeShown
+        // )
+       const generatedRecipeMarkdown = await getRecipeFromMistral(ingredients);
+     //  const recipeMarkdown = getRecipeFromHF(ingredients);
+      // console.log("HF"+recipeMarkdown)
+      setRecipe(generatedRecipeMarkdown);
+    }
     return(
         <>
         <main>
@@ -31,8 +38,11 @@ function Main(){
                 />
                 <button className="add-ingredient" >Add Ingredient</button>
             </form>
-            <IngredientsList ingredients = {ingredients} toggleRecipeShown={toggleRecipeShown} />
-            {recipeShown && <SampleRecipe /> }
+            { ingredients.length > 0 && 
+                <IngredientsList ingredients = {ingredients} getRecipe={getRecipe} />
+            }
+           
+            {recipe && <SampleRecipe recipe={recipe}/> }
         </main>
         </>
     )

@@ -120,11 +120,18 @@ ul.ingredients-list > li {
 }
 .suggested-recipe-container {
     color: #475467;
-    line-height: 28px;
-    font-size: 1rem;
+    line-height: 15px;
+    font-size: 0.8rem;
     font-weight: 100;
 }
-
+.suggested-recipe-container .title{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.suggested-recipe-container h2{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
 .suggested-recipe-container ul li, .suggested-recipe-container ol li {
     margin-bottom: 8px;
 }

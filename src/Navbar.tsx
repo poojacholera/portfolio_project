@@ -7,7 +7,7 @@ function Navbar(){
             <ul className='nav-list'>
                 <li className='nav-list-item'>TravelJournal</li>
                 <li className='nav-list-item'>ChefDevi</li>
-                <li className='nav-list-item'>Contact</li>
+                <li className='nav-list-item'>MemeGenerator</li>
             </ul>
         </nav>
         </>
