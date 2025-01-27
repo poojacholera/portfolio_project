@@ -1,7 +1,7 @@
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-export default function SampleRecipe(props) {
+export default function Recipe(props) {
     return (
         <section className="suggested-recipe-container">
             <h2 className="title">Chef Devi Recommends: </h2>

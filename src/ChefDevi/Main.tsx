@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { createRef, useEffect, useRef, useState } from "react";
 import "./ChefDevi.css"
-import SampleRecipe from "./SampleRecipe";
+import Recipe from "./Recipe";
 import IngredientsList from "./IngredientsList";
 import { getRecipeFromHF,getRecipeFromMistral } from "./ai";
 
 function Main(){
     const [ingredients, setIngredients] = useState(['all the main spices','tomatoes', 'pasta', 'basil', 'olive oil', ]);
     // ingredients=['all the main spices','tomatoes', 'pasta', 'basil', 'olive oil', 'chickpeas']
-   
+    const [recipe, setRecipe] = useState("");
+    const recipeSection = useRef(null);
+   // const [recipeShown, setRecipeShown] = useState();
+
     function addIngredient(formData){
        //event.preventDefault();
        const newIngredient = formData.get("ingredient");
@@ -15,17 +18,23 @@ function Main(){
             [...prevIngredients,newIngredient]
         );
     }
-    const [recipe, setRecipe] = useState("");
-   // const [recipeShown, setRecipeShown] = useState();
     const getRecipe =async () => {
-   // setRecipeShown(prevRecipeShown =>
-        //     !prevRecipeShown
-        // )
        const generatedRecipeMarkdown = await getRecipeFromMistral(ingredients);
-     //  const recipeMarkdown = getRecipeFromHF(ingredients);
-      // console.log("HF"+recipeMarkdown)
       setRecipe(generatedRecipeMarkdown);
     }
+    useEffect(()=>{
+        if(recipe!==null &&  recipeSection.current!== null){
+            recipeSection.current.scrollIntoView({behaviour:'smooth'});
+        //  works well with iFrame  
+        //  const yCoord =recipeSection.current.getBoundingClientRect().top;
+        //    window.scroll({
+        //     top:yCoord,
+        //     behavior:"smooth"
+        //    });
+        }
+    },[recipe]) ;
+
+    
     return(
         <>
         <main>
@@ -39,10 +48,10 @@ function Main(){
                 <button className="add-ingredient" >Add Ingredient</button>
             </form>
             { ingredients.length > 0 && 
-                <IngredientsList ingredients = {ingredients} getRecipe={getRecipe} />
+                <IngredientsList ingredients = {ingredients} getRecipe={getRecipe} ref={recipeSection} />
             }
            
-            {recipe && <SampleRecipe recipe={recipe}/> }
+            {recipe && <Recipe recipe={recipe}/> }
         </main>
         </>
     )

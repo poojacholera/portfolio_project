@@ -127,6 +127,7 @@ ul.ingredients-list > li {
 .suggested-recipe-container .title{
     font-size: 2rem;
     font-weight: 700;
+    line-height: 28px;
 }
 .suggested-recipe-container h2{
     font-size: 1.4rem;
