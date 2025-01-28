@@ -8,7 +8,7 @@ function EntryList(){
 
        // const [location, setLocation] =useState([]);
     //   const locations= [...data];
-    console.log(locationsData);
+    //console.log(locationsData);
 
        const entryCardElement =locationsData.map((l)=>
          {  return <EntryCard  

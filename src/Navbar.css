@@ -1,0 +1,22 @@
+.navbar .nav-list{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    background-color: inherit;
+    justify-content: space-between;
+  }
+
+  li.nav-list-item{
+    color: inherit;
+    font-style: inherit;
+  }
+  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+/* header li a:hover{
+  color:#8beaff;   
+} */

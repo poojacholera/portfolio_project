@@ -1,5 +1,6 @@
 import "./ChefDevi.css"
 import bakerIcon from "../assets/baker.png"
+import Navbar from "../Navbar";
 
 function Header(){
 
@@ -8,6 +9,7 @@ function Header(){
             <header>
                 <img className="header-image" src={bakerIcon}/>
                 <h1 className="header-title">Chef Devi</h1>
+                <Navbar />
             </header>
         </>
     )

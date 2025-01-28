@@ -24,10 +24,10 @@
   
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #ff64acd2);
+  filter: drop-shadow(0 0 4em #ff64acd2);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #fb61eede);
+  filter: drop-shadow(0 0 4em #fb61eede);
 }
 
 @keyframes logo-spin {
@@ -48,12 +48,6 @@
 .card {
   padding: 2em;
 }
-
-.footer {
-  padding:1.5em;
-  color: #dddddd;
-  background-color: rgb(0, 0, 0);
-}
 .list{
   text-align: justify;
 }
@@ -69,26 +63,15 @@
  height: auto; 
  background-color: #21222A;
  width: 100%;
+
+ 
 }
 span.nav-logo{
-width:340px;
+width:540px;
 font-size: 2.4rem;
 font-weight: 700;
 padding: 0 1.5em;
-
-}
-.nav-list{
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  flex-grow: 8;
-}
-.nav-list-item{
-  margin-left: 10px;
-  font-size:  1.1rem;
-  margin-block: 10px;
-  margin-top:40px;
-  max-width: 400px;
+color: #61DAFB;
 }
 .list > li::marker{
   color: #61DAFB;
@@ -101,4 +84,11 @@ padding: 0 1.5em;
 .main-wrapper {
   display: flex;
  flex-direction: column;
+}
+.footer {
+  padding:1.5em;
+  color: #dddddd;
+  background-color: #21222A;
+  display:flex;
+  justify-content: center;
 }

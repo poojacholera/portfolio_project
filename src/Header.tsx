@@ -6,7 +6,7 @@ function Header(){
 return(
     <>
     <header className='header layered'>
-        <img src={reactLogo} width="40px" />
+        {/* <img src={reactLogo} width="40px" /> */}
         <span className='logo nav-logo '>Pooja Cholera</span>
         <Navbar />
     </header>

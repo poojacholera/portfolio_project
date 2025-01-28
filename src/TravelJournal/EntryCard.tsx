@@ -2,7 +2,7 @@ import "./TravelJournal.css"
 import markerIcon from "../assets/icons8-location-96.png";
 
 function EntryCard(props){
-    console.log(props);
+    // console.log(props);
 return(
     <>
         <article className="journal-entry" id={props.id}>
