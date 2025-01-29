@@ -10,9 +10,10 @@ function Die(props){
             <button 
                 style={styles}
                 aria-pressed = {props.isHeld}
+                aria-label={`Die with value ${props.value}, ${props.isHeld? "held":"not held"}`}
                 onClick={props.hold}
                 id={props.id}
-            >
+            > 
                 {props.value}
             </button>
         </>

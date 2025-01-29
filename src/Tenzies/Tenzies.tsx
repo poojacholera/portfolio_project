@@ -1,19 +1,28 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "../Navbar";
 import Die from "./Die";
 import "./Tenzies.css"
 import { nanoid } from "nanoid";
-
+import ReactConfetti from "react-confetti";
 
 function Tenzies(){
-
-    const [dice,setDice] = useState(generateAllNewDice()); 
+    const [count,setCount] = useState(0);
+    const buttonRef = useRef(null);
+    const [dice,setDice] = useState(()=>generateAllNewDice());
+    const gameWon = dice.every(die => die.isHeld)&& dice.every(die=>die.value == dice[0].value)
+      
     const rollDice = () =>{
+        if (gameWon){
+            setDice(generateAllNewDice())
+            setCount(0);
+        }else{
+            setCount(prevCount => prevCount+1);
         setDice(prevDice => prevDice.map(die => 
                 die.isHeld == true ? 
                 die : 
                 {...die, value:Math.ceil(Math.random() * 6)}
             ))
+        }
     }  
     function generateAllNewDice(){
         return new Array(10)
@@ -32,7 +41,6 @@ function Tenzies(){
             )
         )
     }
-   
 // console.log();
     const diceElements = dice.map((dieObject) => 
                                 <Die 
@@ -40,7 +48,12 @@ function Tenzies(){
                                     isHeld={dieObject.isHeld} 
                                     key={dieObject.id} 
                                     hold={()=>hold(dieObject.id)}
-                                />);   
+                                />);  
+    useEffect(()=>{
+        if(gameWon && buttonRef.current != null){
+            buttonRef.current.focus()
+        }
+    },[gameWon]); 
     return(
         <>
         <header>
@@ -51,12 +64,17 @@ function Tenzies(){
             
             <div className="tenzies">
                 <main>
+                    {gameWon && <ReactConfetti />}
+                    <div aria-live="polite" className="sr-only">
+                        {gameWon && <p>Congratulations ! You won! Press "New Game" to start playing again.</p>}
+                    </div>
                     <h1 className="title">Tenzies</h1>
                     <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
                     <div className="dice-container">                      
                         {diceElements}
                     </div>
-                    <button className="roll-dice" onClick={rollDice}>Roll</button>
+                    <button ref={buttonRef} className="roll-dice" onClick={rollDice}>{gameWon ? `New Game` : `Roll`}</button>
+                    <span>count: {count}</span>
                 </main>
             </div>   
         </div>
