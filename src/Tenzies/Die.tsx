@@ -8,6 +8,7 @@ function Die(props){
     return(
         <>
             <button 
+            className="die"
                 style={styles}
                 aria-pressed = {props.isHeld}
                 aria-label={`Die with value ${props.value}, ${props.isHeld? "held":"not held"}`}
@@ -16,6 +17,7 @@ function Die(props){
             > 
                 {props.value}
             </button>
+         
         </>
     )
 }export default Die;

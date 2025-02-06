@@ -1,12 +1,18 @@
-html, body{
+.traveljournal-main{
     margin:0;
+    padding: 0;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
+    font-family:"Calibri", sans-serif;
 }
 
-.container {
+.traveljournal-container {
     margin: 45px 40px;
 }
-header{
+.traveljournal-header{
     background: #F55A5A;
     display: flex;
     justify-content: center;
@@ -15,22 +21,35 @@ header{
     height: 55px;
 }
 
-header >img {
-    width:24px;
+.traveljournal-header > img.traveljournal-header-img {
+    width:35px;
     margin-right: 7px;
     
 }
-header >h1{
-    font-family: Inter;
-    font-size: 0.9rem;
-    font-weight: 500;
+.traveljournal-header .traveljournal-header-name{
+    font-family: Inter, sans-serif;
+    font-size: 1.29rem;
+    font-weight: 700;
 
 }
-
-.invert{
+.traveljournal-header  .invert{
     -webkit-filter: invert(100%);
 }
-
+.traveljournal-header .navbar .nav-list .nav-list-item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: Inter, sans-serif;
+}
+.locations-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:1em;
+    padding: 20px;
+    /* width: 100%;
+    height: 100%; */
+   
+}
 article.journal-entry{
     display: flex;
   
@@ -69,6 +88,10 @@ article.journal-entry .image{
 .info-container a:visited {
     color: #918E9B;
 }
+.info-container a:hover {
+    color: #F55A5A;
+    font-size: 0.7rem;
+}
 
 .info-container h2.entry-title {
     margin-top: 7px;
@@ -77,6 +100,12 @@ article.journal-entry .image{
 
 .info-container p.trip-dates {
     font-weight: bold;
+    font-family:"Calibri", sans-serif;
+    color: #bab9bb;
+    font-size: 0.8rem;
+    line-height: 0.7;
+    margin:0;
+    padding: 0;
 }
 
 .info-container p.entry-text {

@@ -1,86 +1,75 @@
 #root {
   margin: 0 ;
   padding: 0;
-  background-color: #242425; 
+ 
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #ffffff;
-    background-color: #1f1f1f;
-    margin: 0;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body {
+  margin: 0;
+  padding: 0;
+ 
+}
+.main-content-body{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+  font-family: Inter, sans-serif;
 }
 
-
-.logo {
+.header-logo-pop {
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 900ms;
   
 }
-.logo:hover {
-  filter: drop-shadow(0 0 4em #ff64acd2);
+.header-logo-pop:hover {
+  filter: drop-shadow(0 0 2em #ff64ac);
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 4em #fb61eede);
+.header-logo-pop:hover {
+  filter: drop-shadow(0 0 2em #fb61ee);
 }
+.home-header{
+  display:flex;
+  align-items: center;
+  padding:0  1.5em;
+ height: auto; 
+ background-color: #122833;
+ width: 100%;
+}
+.home-header .navbar .nav-list .nav-list-item {
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: Inter, sans-serif;
+  color: #61DAFB;
+}
+.layered {
+  box-shadow:
+  0 6px 5px hsl(0deg 0% 0% / 0.3);
+}
+span.header-logo{
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+font-size: 2.4rem;
+font-weight: 700;
+padding: 0 1.5em;
+color: #61DAFB;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   padding: 2em;
 }
 .list{
   text-align: justify;
+  display: flex;
+  flex-direction: column;
 }
 .year{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style:italic;
   font-size: x-small;
 }
-.header{
-  display:flex;
-  align-items: center;
-  padding:0  1.5em;
- height: auto; 
- background-color: #21222A;
- width: 100%;
-
- 
-}
-span.nav-logo{
-width:540px;
-font-size: 2.4rem;
-font-weight: 700;
-padding: 0 1.5em;
-color: #61DAFB;
-}
 .list > li::marker{
   color: #61DAFB;
   font-size: 1.1rem;
 }
-.layered {
-  box-shadow:
-  0 6px 5px hsl(0deg 0% 0% / 0.3);
-}
+
 .main-wrapper {
   display: flex;
  flex-direction: column;

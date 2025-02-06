@@ -6,10 +6,11 @@ import './index.css'
 function MainContent(){
 return(
     <>
-    <Header/>
-    <MyIntro />
-    <Footer/>
- 
+    <main className='main-content-body'>
+        <Header/>
+        <MyIntro />
+        <Footer/>
+    </main>
     </>
 )
 }export default MainContent;

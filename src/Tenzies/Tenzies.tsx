@@ -56,14 +56,14 @@ function Tenzies(){
     },[gameWon]); 
     return(
         <>
-        <header>
-                <h2>Tenzies</h2>
+        <header className="tenzies-game-header">
+                <h2 className="tenzies-header-name">Tenzies</h2>
                 <Navbar />
             </header>
         <div className="tenzies-game">
             
             <div className="tenzies">
-                <main>
+               
                     {gameWon && <ReactConfetti />}
                     <div aria-live="polite" className="sr-only">
                         {gameWon && <p>Congratulations ! You won! Press "New Game" to start playing again.</p>}
@@ -75,7 +75,7 @@ function Tenzies(){
                     </div>
                     <button ref={buttonRef} className="roll-dice" onClick={rollDice}>{gameWon ? `New Game` : `Roll`}</button>
                     <span>count: {count}</span>
-                </main>
+               
             </div>   
         </div>
         

@@ -5,9 +5,9 @@ function Header(){
     
 return (
     <>
-        <header>
-            <img src={globeIcon} alt="globe icon" className="invert"/>
-            <h1>My Travel Journal</h1>
+        <header className="traveljournal-header">
+            <img src={globeIcon} alt="globe icon" className="traveljournal-header-img invert"/>
+            <h1 className="traveljournal-header-name">My Travel Journal</h1>
             <Navbar />
         </header>
     </>

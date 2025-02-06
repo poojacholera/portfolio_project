@@ -6,12 +6,13 @@ function Traveljournal(){
 
 return(
     <>
+    <main className="traveljournal-main">
     <Header/>
-        <div className="container">
+        <div className="traveljournal-container">
         
         <EntryList />
         </div>
-        
+        </main>
     </>
 )
 }export default Traveljournal;

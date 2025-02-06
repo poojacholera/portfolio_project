@@ -12,6 +12,7 @@ function EntryList(){
 
        const entryCardElement =locationsData.map((l)=>
          {  return <EntryCard  
+                        key={l.id}
                         id={l.id}
                         {...l}
                         //img={l.img.src}

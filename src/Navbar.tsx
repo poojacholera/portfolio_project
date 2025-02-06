@@ -11,23 +11,23 @@ function Navbar(){
                         Home
                     </NavLink>
                  </li>
-                <li className='nav-list-item'>
-                    <NavLink  to="/TravelJournal" >
+                <li>
+                    <NavLink  to="/TravelJournal" className='nav-list-item' >
                         TravelJournal
                     </NavLink>
                 </li>
-                <li className='nav-list-item'>
-                    <NavLink to="/ChefDevi"  >
+                <li>
+                    <NavLink to="/ChefDevi" className='nav-list-item' >
                     ChefDevi
                     </NavLink>
                 </li>
-                <li className='nav-list-item'>
-                    <NavLink to="/MemeGenerator"  >
+                <li>
+                    <NavLink to="/MemeGenerator" className='nav-list-item' >
                     MemeGenerator
                     </NavLink>
                 </li>
-                <li className='nav-list-item'>
-                    <NavLink to="/Tenzies"  >
+                <li>
+                    <NavLink to="/Tenzies" className='nav-list-item' >
                     Tenzies
                     </NavLink>
                 </li>

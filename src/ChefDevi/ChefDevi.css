@@ -1,45 +1,51 @@
-* {
+.chefdevi-body{
+    background-color: rgb(248, 247, 247);
     box-sizing: border-box;
     font-family: Inter, sans-serif;
     color: rgb(44, 87, 107);
-}
-body {
     margin: 0;
+    padding: 0;
     font-family: Inter, sans-serif;
-}
-header{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    background-size: cover;
+}
+.chefdevi-body .chefDevi-header {
+    display: flex;
+    justify-content: stretch;
     align-items: center;
     gap:11px;
     background-color: aquamarine;
     height: 80px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
-header>img{
+ .chefDevi-header > img.header-image{
     height:65px;
     transition: filter .5s ease-in-out;
 }
-header > img:hover {
+.chefDevi-header > img:hover {
     filter: brightness(120%);
 }
-
-header > h1{
+.chefDevi-header > a {
+    color: #646cff;
+}
+.chefDevi-header > h1{
     font-weight: 900;
     color: rgb(44, 87, 107);
 }
-main{
+.chefdevi-main{
     padding: 30px 30px 10px;
 }
 
-.add-ingredient-form{
+.chefdevi-main .add-ingredient-form{
     display: flex;
     justify-content: center;
     gap: 12px;
     height: 38px;
 
 }
-.add-ingredient-form >input {
+.chefdevi-main .add-ingredient-form >input {
     border-radius: 6px;
     border: 1px solid rgb(44, 87, 107);
     padding: 9px 13px;
@@ -49,7 +55,7 @@ main{
     max-width: 400px;
     color: rgb(44, 87, 107);
 }
-.add-ingredient-form > button{
+.chefdevi-main .add-ingredient-form > button{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 6px;
     border:none;
@@ -59,39 +65,57 @@ main{
     font-size: 0.875rem;
     font-weight: 500;
 }
-.add-ingredient-form > button ::before{
+.chefdevi-main .add-ingredient-form > button ::before{
     content: "+";
     margin-right: 5px;
 }
-.container {
+.chefdevi-main .container {
     display: flex;
     flex-direction: column;
-    align-items: justify;
+    justify-content: center;
+    
     padding: 30px 30px 10px;
 }
-.list-ingredients{
+.chefdevi-main .container > h2.ingredient-list-header{
     font-size: 1.5rem;
     font-weight: 700;
-    color: rgb(44, 87, 107);
+    align-items: left;
     letter-spacing: -1.2px;
     font-family: Karla, sans-serif;
 }
-ul.ingredients-list {
-    margin-bottom: 48px;
+.chefdevi-main .container > div.ingredient-list-container {
+    
+    
+    display: flex;
+    flex-direction: column;
+    
+    /* background: rgb(7, 105, 73); */
+}
+.chefdevi-main .container .ingredient-list {
+    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+   align-self: center;
+    
+    
+   
 }
 
-ul.ingredients-list > li {
+.chefdevi-main .container > ul > li.ingredient-list-items {
     color: #475467;
     line-height: 28px;
 }
 
-.get-recipe-container {
+.chefdevi-main .container .get-recipe-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 8px;
     background: rgb(231, 255, 247);
     padding: 2px 28px;
+    margin-top: 15px;
 }
 
 .get-recipe-container h3 {
@@ -124,15 +148,23 @@ ul.ingredients-list > li {
     font-size: 0.8rem;
     font-weight: 100;
 }
+.suggested-recipe-container .markdown h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: auto;
+    color: rgba(16, 110, 79, 0.822);
+}
 .suggested-recipe-container .title{
     font-size: 2rem;
     font-weight: 700;
     line-height: 28px;
 }
-.suggested-recipe-container h2{
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-.suggested-recipe-container ul li, .suggested-recipe-container ol li {
+
+.suggested-recipe-container .markdown ul li, .suggested-recipe-container .markdown ol li {
     margin-bottom: 8px;
+}
+.suggested-recipe-container .markdown ul, .suggested-recipe-container .markdown ol{
+    display: flex;
+    flex-direction: column;
+
 }

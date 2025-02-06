@@ -4,6 +4,8 @@ function MyIntro(){
     return(
         <>
             <div className='card'>
+                <h3>Summary</h3>
+                <p>Results-driven Front-End Developer with experience in building responsive, high-performance web applications. Strong expertise in JavaScript, React.js, and front-end frameworks. Proven ability to collaborate with teams and deliver visually appealing, functional designs. After a career break dedicated to family, now eager to return to the workforce, leverage existing skills, and quickly adapt to modern technologies.</p>
         <h3>Reason I am exicted to learn React</h3>
         <ul className='list'>
             <li>React is a popular library, so I will be able to fit-in with all the coolest devs out there!</li>

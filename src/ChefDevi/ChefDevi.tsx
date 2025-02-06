@@ -6,8 +6,10 @@ function ChefDevi(){
 
     return (
         <>
+        <div className="chefdevi-body">
         <Header/>
         <Main/>
+        </div>
         </>
     )
  } export default ChefDevi;

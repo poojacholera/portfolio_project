@@ -1,45 +1,45 @@
-* {
-    box-sizing: border-box;
-}
 
-body {
-    font-family: "Karla", sans-serif;
-    margin: 0;
-}
 
-main {
+.memegenerator-main {
     margin-inline: auto;
     padding: 36px;
     max-width: 600px;
+    font-family: "Karla", sans-serif;
 }
 
-.header {
+.memegenerator-header {
     display: flex;
     align-items: center;
     height: 65px;
     background: linear-gradient(90deg, #227080 1.18%,  #6b26d3 100%);
     color: white;
     padding: 20px;
+    font-family: "Karla", sans-serif;
 }
 
-.header > img {
+.memegenerator-header > img {
     height: 100%;
     margin-right: 6px;
 }
 
-.header > h1 {
+.memegenerator-header > h1 {
     font-size: 1.25rem;
     margin-right: auto;
+    color: white;
 }
-
-.form {
+.memegenerator-header .navbar .nav-list .nav-list-item {
+    color: white;
+    font-weight: 500;
+    font-family: "Karla", sans-serif;
+}
+.memegenerator-main .form {
     display: grid;
     grid-template: auto auto / 1fr 1fr;
     gap: 17px;
     margin-bottom: 17px;
 }
 
-.form input {
+.memegenerator-main .form input {
     width: 100%;
     margin-top: 5px;
     border-radius: 5px;
@@ -47,7 +47,7 @@ main {
     text-indent: 5px;
 }
 
-.form button {
+.memegenerator-main  .form button {
     grid-column: 1 / -1;
     border-radius: 5px;
     background: linear-gradient(90.41deg, #4d1f8d 1.14%, #6128c2 100%);
@@ -56,7 +56,7 @@ main {
     cursor: pointer;
 }
 
-.form input, .form button {
+.memegenerator-main .form input, .form button {
     min-height: 40px;
     font-family: "Karla", sans-serif;
 }

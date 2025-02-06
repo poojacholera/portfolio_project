@@ -1,13 +1,12 @@
 import './App.css'
 import Navbar from './Navbar';
-import reactLogo from './assets/react.svg'
 
 function Header(){
 return(
     <>
-    <header className='header layered'>
+    <header className='home-header'>
         {/* <img src={reactLogo} width="40px" /> */}
-        <span className='logo nav-logo '>Pooja Cholera</span>
+        <span className='header-logo header-logo-pop'>Pooja Cholera</span>
         <Navbar />
     </header>
     </>

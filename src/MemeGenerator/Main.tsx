@@ -37,7 +37,7 @@ function Main(){
 
     return(
         <>
-          <main>
+          <main className="memegenerator-main">
             <div className="form">
                 <label>Top Text
                     <input

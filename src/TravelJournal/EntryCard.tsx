@@ -7,15 +7,15 @@ return(
     <>
         <article className="journal-entry" id={props.id}>
                 <div className="image-container">
-                    <img  className="image" src={props.img.src} alt={props.imgAlt}/>
+                    <img  className="image" src={props.img.src} alt={props.img.alt}/>
                 </div>
                 <div className="info-container">
                     <img className="marker" src={markerIcon} alt="Location Icon" />
                     <span className="country">{props.country}</span>
-                    <a href={props.mapLink}>View on Google Maps</a>
+                    <a href={props.googleMapsLink}>View on Google Maps</a>
                     <h2 className="entry-title">{props.title}</h2>
                     
-                    <p className="trip-dates">{props.date}</p>
+                    <p className="trip-dates">{props.dates}</p>
                     <p className="entry-text">{props.text}</p>
                 
                 </div>

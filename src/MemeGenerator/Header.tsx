@@ -6,7 +6,7 @@ function Header(){
 
     return(
         <>
-         <header className="header">
+         <header className="memegenerator-header">
             <img 
                 src={trollFace} 
             />

@@ -37,7 +37,7 @@ function Main(){
     
     return(
         <>
-        <main>
+        <main className="chefdevi-main">
             <form name="addIngredientForm" className="add-ingredient-form" action={addIngredient} >
                 <input 
                     type="text"
