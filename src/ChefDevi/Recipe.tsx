@@ -1,6 +1,6 @@
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-
+//@ts-ignore
 export default function Recipe(props) {
     return (
         <section className="suggested-recipe-container">

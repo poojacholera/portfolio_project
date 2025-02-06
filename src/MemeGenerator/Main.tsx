@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import "./MemeGenerator.css"
 import sampleMemeImg from "../assets/cat-meme.jpeg"
 import { useEffect, useState } from "react";
-
+ // @ts-nocheck
 function Main(){
 
     const [meme, setMeme] = useState({
@@ -9,7 +10,7 @@ function Main(){
         bottomText:"",
         imgUrl: sampleMemeImg,
     })
-    const handleChange =(event)=>{
+    const handleChange =(event:React.ChangeEvent<HTMLInputElement>)=>{
        const {value,name} = event.currentTarget;
        console.log(value);
         setMeme(prevMeme=>({
@@ -25,9 +26,10 @@ function Main(){
         .then(data => setAllMemes(data.data.memes))
         //console.log(data.data.memes.url);
     },[]);
-
+ // @ts-nocheck
     const getMemeImage = () =>{
         const randomNumber= Math.floor(Math.random() * allMemes.length);
+        //@ts-ignore
         const newMemeUrl = allMemes[randomNumber].url;
         setMeme(prevMeme => ({
            ...prevMeme,

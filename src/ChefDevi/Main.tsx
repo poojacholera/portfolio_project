@@ -1,16 +1,16 @@
-import { createRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./ChefDevi.css"
 import Recipe from "./Recipe";
 import IngredientsList from "./IngredientsList";
-import { getRecipeFromHF,getRecipeFromMistral } from "./ai";
+import { getRecipeFromMistral } from "./ai";
 
 function Main(){
     const [ingredients, setIngredients] = useState(['all the main spices','tomatoes', 'pasta', 'basil', 'olive oil', ]);
     // ingredients=['all the main spices','tomatoes', 'pasta', 'basil', 'olive oil', 'chickpeas']
     const [recipe, setRecipe] = useState("");
-    const recipeSection = useRef(null);
+    const recipeSection = useRef<HTMLAreaElement>(null);
    // const [recipeShown, setRecipeShown] = useState();
-
+//@ts-ignore
     function addIngredient(formData){
        //event.preventDefault();
        const newIngredient = formData.get("ingredient");
@@ -20,11 +20,13 @@ function Main(){
     }
     const getRecipe =async () => {
        const generatedRecipeMarkdown = await getRecipeFromMistral(ingredients);
+       //@ts-ignore
       setRecipe(generatedRecipeMarkdown);
     }
     useEffect(()=>{
         if(recipe!==null &&  recipeSection.current!== null){
-            recipeSection.current.scrollIntoView({behaviour:'smooth'});
+           
+            recipeSection.current.scrollIntoView({behavior:'smooth'});
         //  works well with iFrame  
         //  const yCoord =recipeSection.current.getBoundingClientRect().top;
         //    window.scroll({

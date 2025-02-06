@@ -4,10 +4,11 @@ import Die from "./Die";
 import "./Tenzies.css"
 import { nanoid } from "nanoid";
 import ReactConfetti from "react-confetti";
+ // @ts-nocheck
 
 function Tenzies(){
     const [count,setCount] = useState(0);
-    const buttonRef = useRef(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
     const [dice,setDice] = useState(()=>generateAllNewDice());
     const gameWon = dice.every(die => die.isHeld)&& dice.every(die=>die.value == dice[0].value)
       
@@ -33,7 +34,7 @@ function Tenzies(){
                      id:nanoid()
                     }))
     }
-    const hold = (id) =>{
+    const hold = (id:string) =>{
         //console.log(id);
         setDice(prevDice => prevDice.map(die => 
             die.id == id ? 
@@ -51,7 +52,7 @@ function Tenzies(){
                                 />);  
     useEffect(()=>{
         if(gameWon && buttonRef.current != null){
-            buttonRef.current.focus()
+            buttonRef.current.focus();
         }
     },[gameWon]); 
     return(

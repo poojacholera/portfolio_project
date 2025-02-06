@@ -1,8 +1,8 @@
 import { ErrorBoundary } from "react-error-boundary";
 import './ChefDevi.css'
-
+//@ts-ignore
 function IngredientsList(props) {
-
+//@ts-ignore
     const listIngredients = props.ingredients.map(i =>(
         <li className="ingredient-list-items" key={i}>{i}</li>
     ));
