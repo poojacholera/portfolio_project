@@ -5,7 +5,7 @@ function EntryCard(props){
     // console.log(props);
 return(
     <>
-        <article className="journal-entry" id={props.id}>
+        <article className="journal-entry" id={props.key}>
                 <div className="image-container">
                     <img  className="image" src={props.img.src} alt={props.img.alt}/>
                 </div>

@@ -3,6 +3,15 @@ import "./TravelJournal.css"
 
 import EntryCard from "./EntryCard";
 import locationsData from "./data";
+type LocationItem = {
+    id: number;
+    img: {src:string, alt:string},
+    title:string,
+    country: string,
+    googleMapsLink: string,
+    dates:string,
+    text: string
+  };
 
 function EntryList(){
 
@@ -10,10 +19,9 @@ function EntryList(){
     //   const locations= [...data];
     //console.log(locationsData);
 
-       const entryCardElement =locationsData.map((l)=>
+       const entryCardElement =locationsData.map((l:LocationItem)=>
          {  return <EntryCard  
                         key={l.id}
-                        id={l.id}
                         {...l}
                         //img={l.img.src}
                         //imgAlt={l.img.alt}
