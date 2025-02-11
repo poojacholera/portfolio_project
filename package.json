@@ -2,7 +2,7 @@
   "name": "portfolio_project",
   "private": true,
   "version": "0.0.0",
-   "homepage": "https://poojacholera.github.io/portfolio_project/",
+   "homepage": "https://poojacholera.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",
