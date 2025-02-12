@@ -15,7 +15,13 @@ export default defineConfig(({mode})=>{
       __APP_ENV__: JSON.stringify(env.APP_ENV),
     },
    
-    distDir: "dist",
+    distDir: "build",
+    base: "/portfolio_project/",
+    build:{
+      outDir:"build",
+      emptyOutDir:true,
+      sourcemap: true,
+    }
   }
 }
  )

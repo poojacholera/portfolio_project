@@ -2,11 +2,11 @@
   "name": "portfolio_project",
   "private": true,
   "version": "0.0.0",
-   "homepage": "https://poojacholera.github.io/portfolio_project",
+   "homepage": "https://poojacholera.github.io/portfolio_project/",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": " tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
